@@ -33,7 +33,7 @@ public class frmMenuPrincipal extends javax.swing.JFrame {
         jDesktopPane1 = new javax.swing.JDesktopPane();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
+        jAgregarCliente = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenuItem3 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
@@ -61,8 +61,13 @@ public class frmMenuPrincipal extends javax.swing.JFrame {
 
         jMenu1.setText("Clientes");
 
-        jMenuItem1.setText("Agregar Clientes");
-        jMenu1.add(jMenuItem1);
+        jAgregarCliente.setText("Agregar Clientes");
+        jAgregarCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jAgregarClienteActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jAgregarCliente);
 
         jMenuItem2.setText("Buscar Clientes");
         jMenu1.add(jMenuItem2);
@@ -121,6 +126,10 @@ public class frmMenuPrincipal extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jMenuItem7ActionPerformed
 
+    private void jAgregarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jAgregarClienteActionPerformed
+      
+    }//GEN-LAST:event_jAgregarClienteActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -148,13 +157,13 @@ public class frmMenuPrincipal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu Jmenu3;
+    private javax.swing.JMenuItem jAgregarCliente;
     private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
