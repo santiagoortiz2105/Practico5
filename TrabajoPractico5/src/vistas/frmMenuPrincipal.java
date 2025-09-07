@@ -49,7 +49,7 @@ public class frmMenuPrincipal extends javax.swing.JFrame {
         jMenuItem3 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jMenuItem4 = new javax.swing.JMenuItem();
-        jMenuItem5 = new javax.swing.JMenuItem();
+        jBuscarTelefonoPorApellido = new javax.swing.JMenuItem();
         Jmenu3 = new javax.swing.JMenu();
         jMenuItem6 = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
@@ -103,8 +103,13 @@ public class frmMenuPrincipal extends javax.swing.JFrame {
         jMenuItem4.setText("Buscar Clientes por Ciudad ");
         jMenu2.add(jMenuItem4);
 
-        jMenuItem5.setText("Buscar Telefono por Apellido");
-        jMenu2.add(jMenuItem5);
+        jBuscarTelefonoPorApellido.setText("Buscar Telefono por Apellido");
+        jBuscarTelefonoPorApellido.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBuscarTelefonoPorApellidoActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jBuscarTelefonoPorApellido);
 
         jMenuBar1.add(jMenu2);
 
@@ -163,7 +168,8 @@ public class frmMenuPrincipal extends javax.swing.JFrame {
 
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
-        // TODO add your handling code here:
+      frmBorrarCliente ventana= new frmBorrarCliente(frmMenuPrincipal.directorio); 
+      ventana.setVisible(true);
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
@@ -175,6 +181,11 @@ public class frmMenuPrincipal extends javax.swing.JFrame {
      frmAgregarCliente ventana = new frmAgregarCliente(frmMenuPrincipal.directorio);
     ventana.setVisible(true);
     }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void jBuscarTelefonoPorApellidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBuscarTelefonoPorApellidoActionPerformed
+       frmBuscarTelefonoPorApellido ventana= new frmBuscarTelefonoPorApellido(frmMenuPrincipal.directorio);
+       ventana.setVisible(true);
+    }//GEN-LAST:event_jBuscarTelefonoPorApellidoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -203,6 +214,7 @@ public class frmMenuPrincipal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu Jmenu3;
+    private javax.swing.JMenuItem jBuscarTelefonoPorApellido;
     private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
@@ -213,7 +225,6 @@ public class frmMenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
-    private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jMenuItem7;
     // End of variables declaration//GEN-END:variables
