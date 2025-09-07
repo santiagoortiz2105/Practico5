@@ -85,6 +85,11 @@ public class frmMenuPrincipal extends javax.swing.JFrame {
         Jmenu3.setText("Ciudades");
 
         jMenuItem6.setText("Agregar Ciudad");
+        jMenuItem6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem6ActionPerformed(evt);
+            }
+        });
         Jmenu3.add(jMenuItem6);
 
         jMenuBar1.add(Jmenu3);
@@ -120,6 +125,11 @@ public class frmMenuPrincipal extends javax.swing.JFrame {
     private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
         this.dispose();
     }//GEN-LAST:event_jMenuItem7ActionPerformed
+
+    private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
+       frmAgregarCiudad ventana = new frmAgregarCiudad();
+       ventana.setVisible(true);
+    }//GEN-LAST:event_jMenuItem6ActionPerformed
 
     /**
      * @param args the command line arguments
