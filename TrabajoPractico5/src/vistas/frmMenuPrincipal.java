@@ -3,6 +3,7 @@ package vistas;
 
 import model.Directorio;
 import model.Cliente;      
+import model.Cliente;       
 import java.util.TreeMap;  
 import javax.swing.JButton;
 import javax.swing.JFrame;

@@ -37,6 +37,7 @@ public class frmAgregarCliente extends javax.swing.JFrame {
         frmAgregarCiudad.modeloCiudades.addElement("Villa Mercedes");
         frmAgregarCiudad.modeloCiudades.addElement("Merlo");
         frmAgregarCiudad.modeloCiudades.addElement("Justo Daract");
+        frmAgregarCiudad.modeloCiudades.addElement("Concaran");
     }
          
     }
@@ -207,6 +208,11 @@ public class frmAgregarCliente extends javax.swing.JFrame {
         jBotonGuardar.setForeground(new java.awt.Color(0, 0, 0));
         jBotonGuardar.setText("Guardar");
         jBotonGuardar.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jBotonGuardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBotonGuardarActionPerformed(evt);
+            }
+        });
 
         jBotonSalir.setBackground(new java.awt.Color(153, 153, 153));
         jBotonSalir.setForeground(new java.awt.Color(0, 0, 0));
@@ -264,6 +270,10 @@ public class frmAgregarCliente extends javax.swing.JFrame {
     private void jBotonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBotonSalirActionPerformed
        this.dispose(); 
     }//GEN-LAST:event_jBotonSalirActionPerformed
+
+    private void jBotonGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBotonGuardarActionPerformed
+        
+    }//GEN-LAST:event_jBotonGuardarActionPerformed
 
     /**
      * @param args the command line arguments
