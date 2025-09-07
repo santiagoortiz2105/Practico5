@@ -2,8 +2,8 @@ package vistas;
 
 
 import model.Directorio;
-import model.Cliente;       // <-- Agregar este
-import java.util.TreeMap;  // <-- Y este
+import model.Cliente;       
+import java.util.TreeMap;  
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import java.awt.event.ActionEvent;
