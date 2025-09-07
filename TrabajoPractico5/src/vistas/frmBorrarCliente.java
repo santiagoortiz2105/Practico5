@@ -2,19 +2,20 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
+package vistas;
 
 /**
  *
- * @author santi
+ * @author thefl
  */
-public class Ejercicio5 extends javax.swing.JFrame {
+public class frmBorrarCliente extends javax.swing.JFrame {
     
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Ejercicio5.class.getName());
+    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(frmBorrarCliente.class.getName());
 
     /**
-     * Creates new form Ejercicio5
+     * Creates new form frmBorrarCliente
      */
-    public Ejercicio5() {
+    public frmBorrarCliente() {
         initComponents();
     }
 
@@ -65,7 +66,7 @@ public class Ejercicio5 extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new Ejercicio5().setVisible(true));
+        java.awt.EventQueue.invokeLater(() -> new frmBorrarCliente().setVisible(true));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
