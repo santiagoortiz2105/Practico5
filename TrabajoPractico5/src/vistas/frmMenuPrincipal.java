@@ -127,7 +127,9 @@ public class frmMenuPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem7ActionPerformed
 
     private void jAgregarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jAgregarClienteActionPerformed
-      
+        frmAgregarCliente ventana = new frmAgregarCliente();
+        ventana.setVisible(true);
+        ventana.setLocationRelativeTo(this);
     }//GEN-LAST:event_jAgregarClienteActionPerformed
 
     /**

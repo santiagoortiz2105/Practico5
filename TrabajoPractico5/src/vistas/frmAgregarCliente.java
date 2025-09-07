@@ -53,7 +53,7 @@ public class frmAgregarCliente extends javax.swing.JFrame {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Agregar Cliente");
 
-        jPanel1.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel1.setBackground(new java.awt.Color(153, 153, 153));
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -76,19 +76,19 @@ public class frmAgregarCliente extends javax.swing.JFrame {
         jLabel6.setForeground(new java.awt.Color(0, 0, 0));
         jLabel6.setText("Domicilio: ");
 
-        jTextField1.setBackground(new java.awt.Color(153, 153, 153));
+        jTextField1.setBackground(new java.awt.Color(204, 204, 204));
         jTextField1.setForeground(new java.awt.Color(0, 0, 0));
         jTextField1.setBorder(null);
 
-        jTextField2.setBackground(new java.awt.Color(153, 153, 153));
+        jTextField2.setBackground(new java.awt.Color(204, 204, 204));
         jTextField2.setForeground(new java.awt.Color(0, 0, 0));
         jTextField2.setBorder(null);
 
-        jTextField3.setBackground(new java.awt.Color(153, 153, 153));
+        jTextField3.setBackground(new java.awt.Color(204, 204, 204));
         jTextField3.setForeground(new java.awt.Color(0, 0, 0));
         jTextField3.setBorder(null);
 
-        jComboBox1.setBackground(new java.awt.Color(153, 153, 153));
+        jComboBox1.setBackground(new java.awt.Color(204, 204, 204));
         jComboBox1.setForeground(new java.awt.Color(0, 0, 0));
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jComboBox1.setBorder(null);
@@ -98,7 +98,7 @@ public class frmAgregarCliente extends javax.swing.JFrame {
             }
         });
 
-        jTextField4.setBackground(new java.awt.Color(153, 153, 153));
+        jTextField4.setBackground(new java.awt.Color(204, 204, 204));
         jTextField4.setForeground(new java.awt.Color(0, 0, 0));
         jTextField4.setBorder(null);
 
@@ -149,14 +149,14 @@ public class frmAgregarCliente extends javax.swing.JFrame {
                 .addContainerGap(26, Short.MAX_VALUE))
         );
 
-        jPanel2.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel2.setBackground(new java.awt.Color(153, 153, 153));
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(0, 0, 0));
         jLabel7.setText("Teléfono: ");
 
-        jTextField5.setBackground(new java.awt.Color(153, 153, 153));
+        jTextField5.setBackground(new java.awt.Color(204, 204, 204));
         jTextField5.setForeground(new java.awt.Color(0, 0, 0));
         jTextField5.setBorder(null);
 
@@ -184,12 +184,12 @@ public class frmAgregarCliente extends javax.swing.JFrame {
         jButton1.setBackground(new java.awt.Color(153, 153, 153));
         jButton1.setForeground(new java.awt.Color(0, 0, 0));
         jButton1.setText("Guardar");
-        jButton1.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+        jButton1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         jButton2.setBackground(new java.awt.Color(153, 153, 153));
         jButton2.setForeground(new java.awt.Color(0, 0, 0));
         jButton2.setText("Salir ");
-        jButton2.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+        jButton2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED)));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -224,7 +224,7 @@ public class frmAgregarCliente extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
                     .addComponent(jButton2))
-                .addContainerGap(26, Short.MAX_VALUE))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
 
         pack();
