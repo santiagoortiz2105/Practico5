@@ -38,8 +38,7 @@ public class Directorio {
         }
         return telefonos;
     }
-  
-
+    
     //d) buscar contactos por ciudad
     public ArrayList<Cliente> buscarContactosPorCiudad(String ciudad){
         ArrayList<Cliente> lista = new ArrayList<>();
