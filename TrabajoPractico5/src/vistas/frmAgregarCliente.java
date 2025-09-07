@@ -4,6 +4,10 @@
  */
 package vistas;
 
+
+  import javax.swing.JOptionPane;
+  import model.Directorio;
+  import model.Cliente;
 /**
  *
  * @author thefl
@@ -11,14 +15,32 @@ package vistas;
 public class frmAgregarCliente extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(frmAgregarCliente.class.getName());
-
+    private Directorio directorio;
     /**
      * Creates new form formAgregarCliente
      */
+    
     public frmAgregarCliente() {
+    initComponents();
+}
+    
+    
+    public frmAgregarCliente(Directorio directorio) {
         initComponents();
-    }
+        this.directorio = directorio;
+        
+         // 🔗 Vincular combo al modelo de ciudades compartido
+    comboCiudad.setModel(frmAgregarCiudad.modeloCiudades);
 
+    // Cargar ciudades por defecto si el modelo está vacío
+    if (frmAgregarCiudad.modeloCiudades.getSize() == 0) {
+        frmAgregarCiudad.modeloCiudades.addElement("Villa Mercedes");
+        frmAgregarCiudad.modeloCiudades.addElement("Merlo");
+        frmAgregarCiudad.modeloCiudades.addElement("Justo Daract");
+    }
+         
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -38,7 +60,7 @@ public class frmAgregarCliente extends javax.swing.JFrame {
         jTextField1 = new javax.swing.JTextField();
         jTextField2 = new javax.swing.JTextField();
         jTextField3 = new javax.swing.JTextField();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        comboCiudad = new javax.swing.JComboBox<>();
         jTextField4 = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
@@ -88,13 +110,13 @@ public class frmAgregarCliente extends javax.swing.JFrame {
         jTextField3.setForeground(new java.awt.Color(0, 0, 0));
         jTextField3.setBorder(null);
 
-        jComboBox1.setBackground(new java.awt.Color(204, 204, 204));
-        jComboBox1.setForeground(new java.awt.Color(0, 0, 0));
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jComboBox1.setBorder(null);
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+        comboCiudad.setBackground(new java.awt.Color(204, 204, 204));
+        comboCiudad.setForeground(new java.awt.Color(0, 0, 0));
+        comboCiudad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        comboCiudad.setBorder(null);
+        comboCiudad.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
+                comboCiudadActionPerformed(evt);
             }
         });
 
@@ -119,7 +141,7 @@ public class frmAgregarCliente extends javax.swing.JFrame {
                     .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextField2)
                     .addComponent(jTextField3)
-                    .addComponent(jComboBox1, 0, 147, Short.MAX_VALUE)
+                    .addComponent(comboCiudad, 0, 147, Short.MAX_VALUE)
                     .addComponent(jTextField4))
                 .addContainerGap(241, Short.MAX_VALUE))
         );
@@ -141,7 +163,7 @@ public class frmAgregarCliente extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(comboCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
@@ -235,9 +257,9 @@ public class frmAgregarCliente extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+    private void comboCiudadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboCiudadActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox1ActionPerformed
+    }//GEN-LAST:event_comboCiudadActionPerformed
 
     private void jBotonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBotonSalirActionPerformed
        this.dispose(); 
@@ -269,9 +291,9 @@ public class frmAgregarCliente extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<String> comboCiudad;
     private javax.swing.JButton jBotonGuardar;
     private javax.swing.JButton jBotonSalir;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

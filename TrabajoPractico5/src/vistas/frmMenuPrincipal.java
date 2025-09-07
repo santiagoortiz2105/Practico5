@@ -1,5 +1,14 @@
 package vistas;
 
+
+import model.Directorio;
+import model.Cliente;       // <-- Agregar este
+import java.util.TreeMap;  // <-- Y este
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -11,6 +20,7 @@ package vistas;
  */
 public class frmMenuPrincipal extends javax.swing.JFrame {
     
+    public static Directorio directorio = new Directorio(new TreeMap<Long, Cliente>());
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(frmMenuPrincipal.class.getName());
 
     /**
@@ -33,9 +43,9 @@ public class frmMenuPrincipal extends javax.swing.JFrame {
         jDesktopPane1 = new javax.swing.JDesktopPane();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenuItem3 = new javax.swing.JMenuItem();
-        jMenuItem1 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jMenuItem4 = new javax.swing.JMenuItem();
         jMenuItem5 = new javax.swing.JMenuItem();
@@ -61,6 +71,14 @@ public class frmMenuPrincipal extends javax.swing.JFrame {
 
         jMenu1.setText("Clientes");
 
+        jMenuItem1.setText("Agregar Cliente");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem1);
+
         jMenuItem2.setText("Buscar Clientes");
         jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -76,14 +94,6 @@ public class frmMenuPrincipal extends javax.swing.JFrame {
             }
         });
         jMenu1.add(jMenuItem3);
-
-        jMenuItem1.setText("Agregar Cliente");
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
-            }
-        });
-        jMenu1.add(jMenuItem1);
 
         jMenuBar1.add(jMenu1);
 
@@ -160,9 +170,8 @@ public class frmMenuPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-     frmAgregarCliente ventana = new frmAgregarCliente();
-        ventana.setVisible(true);
-        ventana.setLocationRelativeTo(this);
+     frmAgregarCliente ventana = new frmAgregarCliente(frmMenuPrincipal.directorio);
+    ventana.setVisible(true);
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     /**

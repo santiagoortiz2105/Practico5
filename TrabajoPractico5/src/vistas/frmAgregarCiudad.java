@@ -3,7 +3,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package vistas;
-
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JOptionPane;
 /**
  *
  * @author thefl
@@ -11,7 +12,7 @@ package vistas;
 public class frmAgregarCiudad extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(frmAgregarCiudad.class.getName());
-
+    public static DefaultComboBoxModel<String> modeloCiudades = new DefaultComboBoxModel<>();  
     /**
      * Creates new form frmAgregarCiudad
      */
@@ -30,7 +31,7 @@ public class frmAgregarCiudad extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        txtNuevaCiudad = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
 
@@ -75,7 +76,7 @@ public class frmAgregarCiudad extends javax.swing.JFrame {
                         .addGap(41, 41, 41)
                         .addComponent(jLabel2)
                         .addGap(18, 18, 18)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(txtNuevaCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(54, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGap(31, 31, 31)
@@ -92,7 +93,7 @@ public class frmAgregarCiudad extends javax.swing.JFrame {
                 .addGap(33, 33, 33)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtNuevaCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
@@ -108,7 +109,15 @@ public class frmAgregarCiudad extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        String nuevaCiudad = txtNuevaCiudad.getText().trim();
+        if (!nuevaCiudad.isEmpty()) {
+            modeloCiudades.addElement(nuevaCiudad);
+            JOptionPane.showMessageDialog(this, "Ciudad agregada: " + nuevaCiudad);
+            txtNuevaCiudad.setText("");
+        } else {
+            JOptionPane.showMessageDialog(this, "Debe ingresar un nombre de ciudad");
+        }
+ 
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
@@ -141,6 +150,6 @@ public class frmAgregarCiudad extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField txtNuevaCiudad;
     // End of variables declaration//GEN-END:variables
 }
