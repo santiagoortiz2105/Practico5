@@ -37,7 +37,7 @@ public class frmAgregarCliente extends javax.swing.JFrame {
         frmAgregarCiudad.modeloCiudades.addElement("Villa Mercedes");
         frmAgregarCiudad.modeloCiudades.addElement("Merlo");
         frmAgregarCiudad.modeloCiudades.addElement("Justo Daract");
-        frmAgregarCiudad.modeloCiudades.addElement("Concaran")
+        frmAgregarCiudad.modeloCiudades.addElement("Concaran");
     }
          
     }
