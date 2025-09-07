@@ -22,6 +22,7 @@ public class frmAgregarCliente extends javax.swing.JFrame {
     
     public frmAgregarCliente() {
     initComponents();
+    comboCiudades.setModel(frmMenuPrincipal.modeloCiudades);
 }
     
     
@@ -30,7 +31,7 @@ public class frmAgregarCliente extends javax.swing.JFrame {
         this.directorio = directorio;
         
          // 🔗 Vincular combo al modelo de ciudades compartido
-    comboCiudad.setModel(frmAgregarCiudad.modeloCiudades);
+    comboCiudades.setModel(frmAgregarCiudad.modeloCiudades);
 
     // Cargar ciudades por defecto si el modelo está vacío
     if (frmAgregarCiudad.modeloCiudades.getSize() == 0) {
@@ -61,7 +62,7 @@ public class frmAgregarCliente extends javax.swing.JFrame {
         txtDni = new javax.swing.JTextField();
         txtNombre = new javax.swing.JTextField();
         txtApellido = new javax.swing.JTextField();
-        comboCiudad = new javax.swing.JComboBox<>();
+        comboCiudades = new javax.swing.JComboBox<>();
         txtDireccion = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
@@ -111,13 +112,13 @@ public class frmAgregarCliente extends javax.swing.JFrame {
         txtApellido.setForeground(new java.awt.Color(0, 0, 0));
         txtApellido.setBorder(null);
 
-        comboCiudad.setBackground(new java.awt.Color(204, 204, 204));
-        comboCiudad.setForeground(new java.awt.Color(0, 0, 0));
-        comboCiudad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        comboCiudad.setBorder(null);
-        comboCiudad.addActionListener(new java.awt.event.ActionListener() {
+        comboCiudades.setBackground(new java.awt.Color(204, 204, 204));
+        comboCiudades.setForeground(new java.awt.Color(0, 0, 0));
+        comboCiudades.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        comboCiudades.setBorder(null);
+        comboCiudades.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                comboCiudadActionPerformed(evt);
+                comboCiudadesActionPerformed(evt);
             }
         });
 
@@ -142,7 +143,7 @@ public class frmAgregarCliente extends javax.swing.JFrame {
                     .addComponent(txtDni, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtNombre)
                     .addComponent(txtApellido)
-                    .addComponent(comboCiudad, 0, 147, Short.MAX_VALUE)
+                    .addComponent(comboCiudades, 0, 147, Short.MAX_VALUE)
                     .addComponent(txtDireccion))
                 .addContainerGap(241, Short.MAX_VALUE))
         );
@@ -164,7 +165,7 @@ public class frmAgregarCliente extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
-                    .addComponent(comboCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(comboCiudades, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
@@ -263,9 +264,9 @@ public class frmAgregarCliente extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void comboCiudadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboCiudadActionPerformed
+    private void comboCiudadesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboCiudadesActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_comboCiudadActionPerformed
+    }//GEN-LAST:event_comboCiudadesActionPerformed
 
     private void jBotonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBotonSalirActionPerformed
        this.dispose(); 
@@ -276,8 +277,8 @@ public class frmAgregarCliente extends javax.swing.JFrame {
     String nombre = txtNombre.getText().trim();
     String apellido = txtApellido.getText().trim();
     String ciudad = "";
-    if (comboCiudad.getSelectedItem() != null) {
-        ciudad = comboCiudad.getSelectedItem().toString();
+    if (comboCiudades.getSelectedItem() != null) {
+        ciudad = comboCiudades.getSelectedItem().toString();
     }
     String direccion = txtDireccion.getText().trim();
     String sTelefono = txtTelefono.getText().trim();
@@ -316,7 +317,7 @@ public class frmAgregarCliente extends javax.swing.JFrame {
         txtApellido.setText("");
         txtDireccion.setText("");
         txtTelefono.setText("");
-        comboCiudad.setSelectedIndex(-1);
+        comboCiudades.setSelectedIndex(-1);
         txtDni.requestFocus();
         }
     /**
@@ -345,7 +346,7 @@ public class frmAgregarCliente extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox<String> comboCiudad;
+    private javax.swing.JComboBox<String> comboCiudades;
     private javax.swing.JButton jBotonGuardar;
     private javax.swing.JButton jBotonSalir;
     private javax.swing.JLabel jLabel1;
