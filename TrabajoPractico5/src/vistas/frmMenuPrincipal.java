@@ -33,7 +33,7 @@ public class frmMenuPrincipal extends javax.swing.JFrame {
         jDesktopPane1 = new javax.swing.JDesktopPane();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
-        jAgregarCliente = new javax.swing.JMenuItem();
+        jMenuItem1 = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenuItem3 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
@@ -61,13 +61,8 @@ public class frmMenuPrincipal extends javax.swing.JFrame {
 
         jMenu1.setText("Clientes");
 
-        jAgregarCliente.setText("Agregar Clientes");
-        jAgregarCliente.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jAgregarClienteActionPerformed(evt);
-            }
-        });
-        jMenu1.add(jAgregarCliente);
+        jMenuItem1.setText("Agregar Clientes");
+        jMenu1.add(jMenuItem1);
 
         jMenuItem2.setText("Buscar Clientes");
         jMenu1.add(jMenuItem2);
@@ -90,6 +85,11 @@ public class frmMenuPrincipal extends javax.swing.JFrame {
         Jmenu3.setText("Ciudades");
 
         jMenuItem6.setText("Agregar Ciudad");
+        jMenuItem6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem6ActionPerformed(evt);
+            }
+        });
         Jmenu3.add(jMenuItem6);
 
         jMenuBar1.add(Jmenu3);
@@ -126,11 +126,18 @@ public class frmMenuPrincipal extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jMenuItem7ActionPerformed
 
+<<<<<<< HEAD
     private void jAgregarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jAgregarClienteActionPerformed
         frmAgregarCliente ventana = new frmAgregarCliente();
         ventana.setVisible(true);
         ventana.setLocationRelativeTo(this);
     }//GEN-LAST:event_jAgregarClienteActionPerformed
+=======
+    private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
+       frmAgregarCiudad ventana = new frmAgregarCiudad();
+       ventana.setVisible(true);
+    }//GEN-LAST:event_jMenuItem6ActionPerformed
+>>>>>>> 76c0980a598ddaa2a0d7c69369bbe368a2bb63fb
 
     /**
      * @param args the command line arguments
@@ -159,13 +166,13 @@ public class frmMenuPrincipal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu Jmenu3;
-    private javax.swing.JMenuItem jAgregarCliente;
     private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
