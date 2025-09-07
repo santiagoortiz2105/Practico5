@@ -31,6 +31,12 @@ public class frmMenuPrincipal extends javax.swing.JFrame {
      */
     public frmMenuPrincipal() {
         initComponents();
+        if (modeloCiudades.getSize() == 0) {
+        modeloCiudades.addElement("Merlo");
+        modeloCiudades.addElement("Villa Mercedes");
+        modeloCiudades.addElement("Justo Daract");
+        modeloCiudades.addElement("Concarán");
+    }
     }
 
     /**

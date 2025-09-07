@@ -22,25 +22,14 @@ public class frmAgregarCliente extends javax.swing.JFrame {
     
     public frmAgregarCliente() {
     initComponents();
-    comboCiudades.setModel(frmMenuPrincipal.modeloCiudades);
-}
+    comboCiudades.setModel(frmMenuPrincipal.modeloCiudades); 
+    }
     
     
     public frmAgregarCliente(Directorio directorio) {
         initComponents();
         this.directorio = directorio;
-        
-         // 🔗 Vincular combo al modelo de ciudades compartido
-    comboCiudades.setModel(frmAgregarCiudad.modeloCiudades);
-
-    // Cargar ciudades por defecto si el modelo está vacío
-    if (frmAgregarCiudad.modeloCiudades.getSize() == 0) {
-        frmAgregarCiudad.modeloCiudades.addElement("Villa Mercedes");
-        frmAgregarCiudad.modeloCiudades.addElement("Merlo");
-        frmAgregarCiudad.modeloCiudades.addElement("Justo Daract");
-        frmAgregarCiudad.modeloCiudades.addElement("Concaran");
-    }
-         
+    comboCiudades.setModel(frmMenuPrincipal.modeloCiudades);
     }
     
     /**

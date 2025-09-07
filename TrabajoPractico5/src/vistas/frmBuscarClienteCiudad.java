@@ -22,7 +22,7 @@ public class frmBuscarClienteCiudad extends javax.swing.JInternalFrame{
      */
     public frmBuscarClienteCiudad() {
         initComponents();
-              
+            
         modelo = new DefaultTableModel();
         modelo.addColumn("DNI");
         modelo.addColumn("Apellido");
@@ -32,12 +32,7 @@ public class frmBuscarClienteCiudad extends javax.swing.JInternalFrame{
         modelo.addColumn("Telefono");
         tablaClientes.setModel(modelo);
 
-        comboCiudades.setModel(frmMenuPrincipal.modeloCiudades);  
-        comboCiudades.removeAllItems();
-        comboCiudades.addItem("Merlo");
-        comboCiudades.addItem("Villa Mercedes");
-        comboCiudades.addItem("Justo Daract");
-        comboCiudades.addItem("Concaran");
+        comboCiudades.setModel(frmMenuPrincipal.modeloCiudades); 
 
    
         comboCiudades.addActionListener(new java.awt.event.ActionListener() {
