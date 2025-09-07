@@ -6,6 +6,7 @@ public class Cliente {
     private String apellido;
     private String ciudad;
     private String direccion;
+    private String telefono;
 
     public Cliente(int dni, String nombre, String apellido, String ciudad, String direccion) {
         this.dni = dni;
@@ -13,6 +14,7 @@ public class Cliente {
         this.apellido = apellido;
         this.ciudad = ciudad;
         this.direccion = direccion;
+        this.telefono = telefono;
     }
 
     public int getDni() {
@@ -54,7 +56,12 @@ public class Cliente {
     public void setDireccion(String direccion) {
         this.direccion = direccion;
     }
-
+    
+    public String getTelefono() {
+    return telefono;
+    }
+    
+ 
     @Override
     public String toString() {
         return "Cliente{" + "dni=" + dni + ", nombre=" + nombre + ", apellido=" + apellido + ", ciudad=" + ciudad + ", direccion=" + direccion + '}';
