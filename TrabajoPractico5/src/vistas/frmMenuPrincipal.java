@@ -141,10 +141,18 @@ public class frmMenuPrincipal extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jMenuItem7ActionPerformed
 
+<<<<<<< HEAD
+    private void jAgregarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jAgregarClienteActionPerformed
+        frmAgregarCliente ventana = new frmAgregarCliente();
+        ventana.setVisible(true);
+        ventana.setLocationRelativeTo(this);
+    }//GEN-LAST:event_jAgregarClienteActionPerformed
+=======
     private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
        frmAgregarCiudad ventana = new frmAgregarCiudad();
        ventana.setVisible(true);
     }//GEN-LAST:event_jMenuItem6ActionPerformed
+>>>>>>> 76c0980a598ddaa2a0d7c69369bbe368a2bb63fb
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
         // TODO add your handling code here:
