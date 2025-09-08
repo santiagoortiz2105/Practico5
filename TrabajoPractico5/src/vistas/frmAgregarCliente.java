@@ -280,7 +280,12 @@ public class frmAgregarCliente extends javax.swing.JFrame {
     }
 
     try {
+        //Esto es para que el campo Telefono tenga solo numeros
         int dni = Integer.parseInt(sDni);
+        if(!sTelefono.matches("\\d+")){
+            JOptionPane.showMessageDialog(this, "Debe ingresar solo numeros en el campo Telefono" , "Error" ,JOptionPane.ERROR_MESSAGE);
+            txtTelefono.requestFocus();
+        }
         long telefono = Long.parseLong(sTelefono);
 
         // OJO: adaptá este constructor al que tiene tu clase Cliente

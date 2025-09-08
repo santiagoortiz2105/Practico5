@@ -1,6 +1,7 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Map;
 import java.util.Set;
 import java.util.TreeMap;
@@ -59,4 +60,31 @@ public class Directorio {
         }
         return borrado;
     }
+    public Cliente buscarClientePorDni(long dni){
+        for(Cliente c : contactos.values()){
+            if (c.getDni()==dni){
+                return c;
+            }
+        }
+        return null; 
+    }
+    public boolean borrarCliente(Cliente c) {
+   if (c== null) return false;
+   Long clave = null;
+   for(Map.Entry<Long,Cliente> entry: contactos.entrySet()){
+       if (entry.getValue().equals(c)){
+           clave = entry.getKey();
+           break;
+       }
+   }
+    if (clave!=null){
+        contactos.remove(clave);
+        return true;
+    }
+    return false;
+    }    
+    public Collection<Cliente> getClientes(){
+        return contactos.values();
+    }
+   
 }

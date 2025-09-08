@@ -4,13 +4,17 @@
  */
 package vistas;
 
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 import model.Directorio;
+import model.Cliente;
 
 /**
  *
  * @author thefl
  */
 public class frmBorrarCliente extends javax.swing.JFrame {
+    private Directorio directorio;
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(frmBorrarCliente.class.getName());
   
@@ -19,6 +23,34 @@ public class frmBorrarCliente extends javax.swing.JFrame {
      */
     public frmBorrarCliente(Directorio directorio) {
         initComponents();
+       this.directorio = directorio;
+       jTextField1.addActionListener(evt -> buscarClientePorDNI());
+    }
+    private void mostrarCliente(long dni) {
+        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+        model.setRowCount(0); // limpiar la tabla
+
+        Cliente c = directorio.buscarClientePorDni(dni);
+        if (c != null) {
+            model.addRow(new Object[]{
+                c.getDni(),
+                c.getApellido(),
+                c.getNombre(),
+                c.getDireccion(),
+                c.getCiudad(),
+                c.getTelefono()
+            });
+        } else {
+            JOptionPane.showMessageDialog(this, "No se encontró un cliente con ese DNI");
+        }
+    }
+      private void buscarClientePorDNI() {
+        try {
+            long dni = Long.parseLong(jTextField1.getText().trim());
+            mostrarCliente(dni);
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Debe ingresar un número válido de DNI");
+        }
     }
     
     /**
@@ -179,7 +211,25 @@ public class frmBorrarCliente extends javax.swing.JFrame {
     }//GEN-LAST:event_jBotonSalirActionPerformed
 
     private void jBotonBorrarClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBotonBorrarClientesActionPerformed
-
+ try {
+            long dni = Long.parseLong(jTextField1.getText().trim());
+            Cliente c = directorio.buscarClientePorDni(dni);
+            if (c != null) {
+                int confirm = JOptionPane.showConfirmDialog(this,
+                        "¿Seguro que desea borrar al cliente " + c.getNombre() + " " + c.getApellido() + "?",
+                        "Confirmar borrado", JOptionPane.YES_NO_OPTION);
+                if (confirm == JOptionPane.YES_OPTION) {
+                    directorio.borrarCliente(c);
+                    JOptionPane.showMessageDialog(this, "Cliente borrado correctamente.");
+                    actualizarTabla();
+                }
+            } else {
+                JOptionPane.showMessageDialog(this, "No se encontró un cliente con ese DNI.", "Error", JOptionPane.ERROR_MESSAGE);
+            }
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Debe ingresar solo números en el campo DNI.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    
     }//GEN-LAST:event_jBotonBorrarClientesActionPerformed
 
     /**
@@ -218,4 +268,15 @@ public class frmBorrarCliente extends javax.swing.JFrame {
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
-}
+
+    private void actualizarTabla() {
+       
+        DefaultTableModel modelo = (DefaultTableModel) jTable1.getModel();
+        modelo.setRowCount(0); // limpiar tabla
+        for (Cliente c : directorio.getClientes()) {
+            modelo.addRow(new Object[]{c.getDni(), c.getApellido(), c.getNombre(),
+                    c.getDireccion(), c.getCiudad(), c.getTelefono()});
+        }
+    }
+    }
+
