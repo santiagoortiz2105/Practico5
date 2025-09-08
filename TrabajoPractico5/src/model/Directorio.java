@@ -1,5 +1,5 @@
 package model;
-
+//Integrantes: Manceñido Xenia, Ortiz Lourdes, Ortiz Santiago, Ozan Santiago 
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Map;

@@ -5,6 +5,7 @@
 package vistas;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
+//Integrantes: Manceñido Xenia, Ortiz Lourdes, Ortiz Santiago, Ozan Santiago 
 /**
  *
  * @author thefl

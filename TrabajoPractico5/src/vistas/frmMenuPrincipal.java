@@ -1,5 +1,5 @@
 package vistas;
-
+//Integrantes: Manceñido Xenia, Ortiz Lourdes, Ortiz Santiago, Ozan Santiago 
 
 import model.Directorio;
 import model.Cliente;      

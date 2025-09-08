@@ -1,5 +1,5 @@
 package model;
-
+//Integrantes: Manceñido Xenia, Ortiz Lourdes, Ortiz Santiago, Ozan Santiago 
 public class Cliente {
     private int dni;
     private String nombre;
