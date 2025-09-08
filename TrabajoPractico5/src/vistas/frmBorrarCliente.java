@@ -13,14 +13,14 @@ import model.Directorio;
 public class frmBorrarCliente extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(frmBorrarCliente.class.getName());
-
+  
     /**
      * Creates new form frmBorrarCliente
      */
     public frmBorrarCliente(Directorio directorio) {
         initComponents();
     }
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -83,6 +83,11 @@ public class frmBorrarCliente extends javax.swing.JFrame {
         jBotonBorrarClientes.setBackground(new java.awt.Color(153, 153, 153));
         jBotonBorrarClientes.setForeground(new java.awt.Color(0, 0, 0));
         jBotonBorrarClientes.setText("Borrar Cliente/s");
+        jBotonBorrarClientes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBotonBorrarClientesActionPerformed(evt);
+            }
+        });
 
         jTable1.setBackground(new java.awt.Color(204, 204, 204));
         jTable1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -172,6 +177,10 @@ public class frmBorrarCliente extends javax.swing.JFrame {
     private void jBotonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBotonSalirActionPerformed
         this.dispose();
     }//GEN-LAST:event_jBotonSalirActionPerformed
+
+    private void jBotonBorrarClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBotonBorrarClientesActionPerformed
+
+    }//GEN-LAST:event_jBotonBorrarClientesActionPerformed
 
     /**
      * @param args the command line arguments

@@ -5,6 +5,10 @@
 package vistas;
 
 import model.Directorio;
+import model.Cliente;
+import javax.swing.table.DefaultTableModel;
+import java.util.Set;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -12,13 +16,76 @@ import model.Directorio;
  */
 public class frmBuscarTelefonoPorApellido extends javax.swing.JFrame {
     
+    
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(frmBuscarTelefonoPorApellido.class.getName());
-
+    private Directorio directorio;
+    private DefaultTableModel modeloTabla;
+    
     /**
      * Creates new form frmBuscarTelefonoPorApellido
      */
     public frmBuscarTelefonoPorApellido(Directorio directorio) {
         initComponents();
+         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+
+        configurarTabla();
+    }
+    
+    private void configurarTabla() {
+        modeloTabla = new DefaultTableModel(
+            new Object[]{"DNI", "Apellido", "Nombre", "Domicilio", "Ciudad", "Telefono"}, 0
+        ) {
+            public boolean isCellEditable(int row, int column) {
+                return false;
+            }
+        };
+        jTable1.setModel(modeloTabla);
+    }
+
+    private void limpiarTabla() {
+        if (modeloTabla != null) {
+            modeloTabla.setRowCount(0);
+        }
+    }
+
+    private void buscarPorApellido() {
+        String apellido = jTextField1.getText().trim();
+
+        if (apellido.equals("")) {
+            JOptionPane.showMessageDialog(
+                this, "Ingresá un apellido para buscar",
+                "Aviso", JOptionPane.WARNING_MESSAGE
+            );
+            return;
+        }
+
+        limpiarTabla();
+
+        // Usamos el directorio del frmMenuPrincipal
+        Set<Long> telefonos = frmMenuPrincipal.directorio.buscarTelefonoPorApellido(apellido);
+
+        if (telefonos == null || telefonos.isEmpty()) {
+            JOptionPane.showMessageDialog(
+                this, "No se encontraron teléfonos para el apellido: " + apellido,
+                "Sin resultados", JOptionPane.INFORMATION_MESSAGE
+            );
+            return;
+        }
+
+        for (Long tel : telefonos) {
+            Cliente c = frmMenuPrincipal.directorio.buscarContactoConTelefono(tel);
+            if (c != null) {
+                Object[] fila = new Object[]{
+                    c.getDni(),
+                    c.getApellido(),
+                    c.getNombre(),
+                    c.getDireccion(), 
+                    c.getCiudad(),
+                    tel
+                };
+                modeloTabla.addRow(fila);
+            }
+        }
     }
 
     /**
@@ -56,6 +123,11 @@ public class frmBuscarTelefonoPorApellido extends javax.swing.JFrame {
         jTextField1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jTextField1.setForeground(new java.awt.Color(0, 0, 0));
         jTextField1.setBorder(null);
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setForeground(new java.awt.Color(0, 0, 0));
@@ -161,6 +233,10 @@ public class frmBuscarTelefonoPorApellido extends javax.swing.JFrame {
     private void jBotonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBotonSalirActionPerformed
         this.dispose();
     }//GEN-LAST:event_jBotonSalirActionPerformed
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+      buscarPorApellido();
+    }//GEN-LAST:event_jTextField1ActionPerformed
 
     /**
      * @param args the command line arguments
