@@ -5,7 +5,8 @@
 package vistas;
 
 import model.Directorio;
-
+import model.Cliente;
+import javax.swing.JOptionPane;
 /**
  *
  * @author thefl
@@ -13,12 +14,14 @@ import model.Directorio;
 public class frmBuscarCliente extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(frmBuscarCliente.class.getName());
-
+    private Directorio directorio; 
     /**
      * Creates new form frmBuscarCliente
      */
     public frmBuscarCliente(Directorio directorio) {
         initComponents();
+        this.directorio = directorio;
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
     }
 
     /**
@@ -64,6 +67,11 @@ public class frmBuscarCliente extends javax.swing.JFrame {
         jTextField1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jTextField1.setForeground(new java.awt.Color(0, 0, 0));
         jTextField1.setBorder(null);
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -225,6 +233,35 @@ public class frmBuscarCliente extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jBotonSalirActionPerformed
 
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        buscarCliente(); 
+    }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void buscarCliente() {
+    try {
+        Long telefono = Long.parseLong(jTextField1.getText().trim());
+        Cliente c = directorio.buscarContactoConTelefono(telefono);
+
+        if (c != null) {
+            jTextField2.setText(String.valueOf(c.getDni())); 
+            jTextField3.setText(c.getApellido());
+            jTextField4.setText(c.getNombre());
+            jTextField5.setText(c.getCiudad());
+            jTextField6.setText(c.getDireccion());
+        } else {
+            javax.swing.JOptionPane.showMessageDialog(
+                this, "No se encontró un cliente con ese teléfono",
+                "Sin resultados", javax.swing.JOptionPane.INFORMATION_MESSAGE
+            );
+           
+        }
+    } catch (NumberFormatException e) {
+        javax.swing.JOptionPane.showMessageDialog(
+            this, "Debe ingresar un número de teléfono válido",
+            "Error", javax.swing.JOptionPane.ERROR_MESSAGE
+        );
+    }
+}
     /**
      * @param args the command line arguments
      */
