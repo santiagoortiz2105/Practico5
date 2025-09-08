@@ -107,7 +107,7 @@
                       <Component id="txtDni" min="-2" pref="101" max="-2" attributes="0"/>
                       <Component id="txtNombre" max="32767" attributes="0"/>
                       <Component id="txtApellido" alignment="0" max="32767" attributes="0"/>
-                      <Component id="comboCiudad" alignment="0" pref="147" max="32767" attributes="0"/>
+                      <Component id="comboCiudades" alignment="0" pref="147" max="32767" attributes="0"/>
                       <Component id="txtDireccion" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace pref="241" max="32767" attributes="0"/>
@@ -135,7 +135,7 @@
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="comboCiudad" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="comboCiudades" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -242,7 +242,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JComboBox" name="comboCiudad">
+        <Component class="javax.swing.JComboBox" name="comboCiudades">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="cc" green="cc" red="cc" type="rgb"/>
@@ -263,7 +263,7 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="comboCiudadActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="comboCiudadesActionPerformed"/>
           </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>

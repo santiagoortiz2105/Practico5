@@ -109,14 +109,14 @@ public class frmAgregarCiudad extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        String nuevaCiudad = txtNuevaCiudad.getText().trim();
-        if (!nuevaCiudad.isEmpty()) {
-            modeloCiudades.addElement(nuevaCiudad);
-            JOptionPane.showMessageDialog(this, "Ciudad agregada: " + nuevaCiudad);
-            txtNuevaCiudad.setText("");
-        } else {
-            JOptionPane.showMessageDialog(this, "Debe ingresar un nombre de ciudad");
-        }
+     String nuevaCiudad = txtNuevaCiudad.getText().trim();
+    if (!nuevaCiudad.isEmpty()) {
+        frmMenuPrincipal.modeloCiudades.addElement(nuevaCiudad);
+        JOptionPane.showMessageDialog(this, "Ciudad agregada: " + nuevaCiudad);
+        txtNuevaCiudad.setText("");
+    } else {
+        JOptionPane.showMessageDialog(this, "Debe ingresar una ciudad.", "Error", JOptionPane.ERROR_MESSAGE);
+    }
  
     }//GEN-LAST:event_jButton1ActionPerformed
 

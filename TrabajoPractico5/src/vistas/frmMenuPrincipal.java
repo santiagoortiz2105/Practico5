@@ -9,6 +9,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.DefaultComboBoxModel;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -23,12 +24,19 @@ public class frmMenuPrincipal extends javax.swing.JFrame {
     
     public static Directorio directorio = new Directorio(new TreeMap<Long, Cliente>());
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(frmMenuPrincipal.class.getName());
+    public static DefaultComboBoxModel<String> modeloCiudades = new DefaultComboBoxModel<>();
 
     /**
      * Creates new form frmMenuPrincipal
      */
     public frmMenuPrincipal() {
         initComponents();
+        if (modeloCiudades.getSize() == 0) {
+        modeloCiudades.addElement("Merlo");
+        modeloCiudades.addElement("Villa Mercedes");
+        modeloCiudades.addElement("Justo Daract");
+        modeloCiudades.addElement("Concarán");
+    }
     }
 
     /**
@@ -101,6 +109,11 @@ public class frmMenuPrincipal extends javax.swing.JFrame {
         jMenu2.setText("Directorio");
 
         jMenuItem4.setText("Buscar Clientes por Ciudad ");
+        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem4ActionPerformed(evt);
+            }
+        });
         jMenu2.add(jMenuItem4);
 
         jBuscarTelefonoPorApellido.setText("Buscar Telefono por Apellido");
@@ -186,6 +199,12 @@ public class frmMenuPrincipal extends javax.swing.JFrame {
        frmBuscarTelefonoPorApellido ventana= new frmBuscarTelefonoPorApellido(frmMenuPrincipal.directorio);
        ventana.setVisible(true);
     }//GEN-LAST:event_jBuscarTelefonoPorApellidoActionPerformed
+
+    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
+    frmBuscarClienteCiudad ventana = new frmBuscarClienteCiudad();
+    jDesktopPane1.add(ventana);
+    ventana.setVisible(true);
+    }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     /**
      * @param args the command line arguments
