@@ -289,7 +289,7 @@ public class frmAgregarCliente extends javax.swing.JFrame {
         long telefono = Long.parseLong(sTelefono);
 
         // OJO: adaptá este constructor al que tiene tu clase Cliente
-        Cliente nuevo = new Cliente(dni, nombre, apellido, ciudad, direccion);
+        Cliente nuevo = new Cliente(dni, nombre, apellido, ciudad, direccion,telefono);
 
         boolean agregado = frmMenuPrincipal.directorio.agregarContacto(telefono, nuevo);
 

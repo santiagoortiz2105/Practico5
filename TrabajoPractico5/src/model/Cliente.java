@@ -6,9 +6,9 @@ public class Cliente {
     private String apellido;
     private String ciudad;
     private String direccion;
-    private String telefono;
+    private long  telefono;
 
-    public Cliente(int dni, String nombre, String apellido, String ciudad, String direccion) {
+    public Cliente(int dni, String nombre, String apellido, String ciudad, String direccion, long telefono) {
         this.dni = dni;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -34,7 +34,7 @@ public class Cliente {
         this.nombre = nombre;
     }
     
-    public String getTelefono() {
+    public long getTelefono() {
         return telefono;
     }
     public String getApellido() {

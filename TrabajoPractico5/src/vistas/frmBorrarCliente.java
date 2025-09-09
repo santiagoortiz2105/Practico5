@@ -8,7 +8,9 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import model.Directorio;
 import model.Cliente;
-
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
+import javax.swing.DefaultListModel;
 /**
  *
  * @author thefl
@@ -24,7 +26,37 @@ public class frmBorrarCliente extends javax.swing.JFrame {
     public frmBorrarCliente(Directorio directorio) {
         initComponents();
        this.directorio = directorio;
-       jTextField1.addActionListener(evt -> buscarClientePorDNI());
+        // Evento del TextField (Enter)
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buscarClientePorDNI();
+            }
+        });
+
+        // Evento del JList
+        jLista1.addListSelectionListener(new ListSelectionListener() {
+            public void valueChanged(ListSelectionEvent e) {
+                if (!e.getValueIsAdjusting()) {
+                    String telefono = jLista1.getSelectedValue();
+                    if (telefono != null) {
+                        long tel = Long.parseLong(telefono);
+                        Cliente c = directorio.buscarContactoConTelefono(tel);
+                        if (c != null) {
+                            DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+                            model.setRowCount(0);
+                            model.addRow(new Object[]{
+                                c.getDni(),
+                                c.getApellido(),
+                                c.getNombre(),
+                                c.getDireccion(),
+                                c.getCiudad(),
+                                c.getTelefono()
+                            });
+                        }
+                    }
+                }
+            }
+        });
     }
     private void mostrarCliente(long dni) {
         DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
@@ -39,7 +71,14 @@ public class frmBorrarCliente extends javax.swing.JFrame {
                 c.getDireccion(),
                 c.getCiudad(),
                 c.getTelefono()
+                    
+               
+                                    
             });
+         // llenar la lista con el teléfono del cliente
+        DefaultListModel<String> modeloLista = new DefaultListModel<>();
+        modeloLista.addElement(String.valueOf(c.getTelefono()));
+        jLista1.setModel(modeloLista);       
         } else {
             JOptionPane.showMessageDialog(this, "No se encontró un cliente con ese DNI");
         }
