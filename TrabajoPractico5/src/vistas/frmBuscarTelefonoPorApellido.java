@@ -93,7 +93,7 @@ public class frmBuscarTelefonoPorApellido extends javax.swing.JFrame {
                     c.getNombre(),
                     c.getDireccion(), 
                     c.getCiudad(),
-                    tel
+                    c.getTelefono(),
                 };
                 modeloTabla.addRow(fila);
                 modeloLista.addElement(c.getApellido());

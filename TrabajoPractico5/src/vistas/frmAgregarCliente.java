@@ -49,9 +49,9 @@ public class frmAgregarCliente extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         txtDni = new javax.swing.JTextField();
-        txtNombre = new javax.swing.JTextField();
         txtApellido = new javax.swing.JTextField();
         comboCiudades = new javax.swing.JComboBox<>();
+        txtNombre = new javax.swing.JTextField();
         txtDireccion = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
@@ -62,7 +62,6 @@ public class frmAgregarCliente extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Agregar Cliente");
 
@@ -70,39 +69,31 @@ public class frmAgregarCliente extends javax.swing.JFrame {
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("DNI:");
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Nombre: ");
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Apellido: ");
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("Ciudad: ");
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
         jLabel6.setText("Domicilio: ");
 
         txtDni.setBackground(new java.awt.Color(204, 204, 204));
-        txtDni.setForeground(new java.awt.Color(0, 0, 0));
         txtDni.setBorder(null);
-
-        txtNombre.setBackground(new java.awt.Color(204, 204, 204));
-        txtNombre.setForeground(new java.awt.Color(0, 0, 0));
-        txtNombre.setBorder(null);
+        txtDni.setMinimumSize(new java.awt.Dimension(30, 22));
+        txtDni.setPreferredSize(new java.awt.Dimension(64, 20));
 
         txtApellido.setBackground(new java.awt.Color(204, 204, 204));
-        txtApellido.setForeground(new java.awt.Color(0, 0, 0));
         txtApellido.setBorder(null);
+        txtApellido.setMinimumSize(new java.awt.Dimension(64, 20));
+        txtApellido.setPreferredSize(new java.awt.Dimension(64, 20));
 
         comboCiudades.setBackground(new java.awt.Color(204, 204, 204));
-        comboCiudades.setForeground(new java.awt.Color(0, 0, 0));
         comboCiudades.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         comboCiudades.setBorder(null);
         comboCiudades.addActionListener(new java.awt.event.ActionListener() {
@@ -111,9 +102,15 @@ public class frmAgregarCliente extends javax.swing.JFrame {
             }
         });
 
+        txtNombre.setBackground(new java.awt.Color(204, 204, 204));
+        txtNombre.setBorder(null);
+        txtNombre.setMinimumSize(new java.awt.Dimension(64, 20));
+        txtNombre.setPreferredSize(new java.awt.Dimension(64, 20));
+
         txtDireccion.setBackground(new java.awt.Color(204, 204, 204));
-        txtDireccion.setForeground(new java.awt.Color(0, 0, 0));
         txtDireccion.setBorder(null);
+        txtDireccion.setMinimumSize(new java.awt.Dimension(64, 20));
+        txtDireccion.setPreferredSize(new java.awt.Dimension(64, 20));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -127,14 +124,19 @@ public class frmAgregarCliente extends javax.swing.JFrame {
                     .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(txtDni, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtNombre)
-                    .addComponent(txtApellido)
-                    .addComponent(comboCiudades, 0, 147, Short.MAX_VALUE)
-                    .addComponent(txtDireccion))
-                .addContainerGap(241, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(comboCiudades, 0, 147, Short.MAX_VALUE)
+                                .addComponent(txtDni, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(txtNombre, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(txtApellido, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(txtDireccion, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(29, 235, Short.MAX_VALUE))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -143,7 +145,7 @@ public class frmAgregarCliente extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(txtDni, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -166,12 +168,12 @@ public class frmAgregarCliente extends javax.swing.JFrame {
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
         jLabel7.setText("Teléfono: ");
 
         txtTelefono.setBackground(new java.awt.Color(204, 204, 204));
-        txtTelefono.setForeground(new java.awt.Color(0, 0, 0));
         txtTelefono.setBorder(null);
+        txtTelefono.setMinimumSize(new java.awt.Dimension(64, 20));
+        txtTelefono.setPreferredSize(new java.awt.Dimension(64, 20));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -180,14 +182,14 @@ public class frmAgregarCliente extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(23, 23, 23)
                 .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(217, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(txtTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(238, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(34, 34, 34)
+                .addGap(32, 32, 32)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
                     .addComponent(txtTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -195,7 +197,6 @@ public class frmAgregarCliente extends javax.swing.JFrame {
         );
 
         jBotonGuardar.setBackground(new java.awt.Color(153, 153, 153));
-        jBotonGuardar.setForeground(new java.awt.Color(0, 0, 0));
         jBotonGuardar.setText("Guardar");
         jBotonGuardar.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jBotonGuardar.addActionListener(new java.awt.event.ActionListener() {
@@ -205,7 +206,6 @@ public class frmAgregarCliente extends javax.swing.JFrame {
         });
 
         jBotonSalir.setBackground(new java.awt.Color(153, 153, 153));
-        jBotonSalir.setForeground(new java.awt.Color(0, 0, 0));
         jBotonSalir.setText("Salir ");
         jBotonSalir.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED)));
         jBotonSalir.addActionListener(new java.awt.event.ActionListener() {
@@ -247,15 +247,11 @@ public class frmAgregarCliente extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jBotonGuardar)
                     .addComponent(jBotonSalir))
-                .addContainerGap(24, Short.MAX_VALUE))
+                .addContainerGap(12, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void comboCiudadesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboCiudadesActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_comboCiudadesActionPerformed
 
     private void jBotonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBotonSalirActionPerformed
        this.dispose(); 
@@ -263,7 +259,7 @@ public class frmAgregarCliente extends javax.swing.JFrame {
 
     private void jBotonGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBotonGuardarActionPerformed
      String sDni = txtDni.getText().trim();
-    String nombre = txtNombre.getText().trim();
+    String nombre = txtApellido.getText().trim();
     String apellido = txtApellido.getText().trim();
     String ciudad = "";
     if (comboCiudades.getSelectedItem() != null) {
@@ -305,9 +301,13 @@ public class frmAgregarCliente extends javax.swing.JFrame {
     }
      
     }//GEN-LAST:event_jBotonGuardarActionPerformed
+
+    private void comboCiudadesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboCiudadesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_comboCiudadesActionPerformed
     private void limpiarCampos() {
         txtDni.setText("");
-        txtNombre.setText("");
+        txtApellido.setText("");
         txtApellido.setText("");
         txtDireccion.setText("");
         txtTelefono.setText("");
