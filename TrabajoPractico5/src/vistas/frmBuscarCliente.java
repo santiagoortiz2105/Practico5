@@ -49,7 +49,7 @@ public class frmBuscarCliente extends javax.swing.JFrame {
         jTextField6 = new javax.swing.JTextField();
         jBotonSalir = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList<>();
+        jLista1 = new javax.swing.JList<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -130,9 +130,9 @@ public class frmBuscarCliente extends javax.swing.JFrame {
             }
         });
 
-        jList1.setBackground(new java.awt.Color(255, 255, 255));
-        jList1.setBorder(null);
-        jScrollPane1.setViewportView(jList1);
+        jLista1.setBackground(new java.awt.Color(255, 255, 255));
+        jLista1.setBorder(null);
+        jScrollPane1.setViewportView(jLista1);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -289,7 +289,7 @@ public class frmBuscarCliente extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JList<String> jList1;
+    private javax.swing.JList<String> jLista1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jTextField1;

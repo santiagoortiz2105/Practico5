@@ -71,7 +71,7 @@ public class frmBorrarCliente extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList<>();
+        jLista1 = new javax.swing.JList<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -126,8 +126,8 @@ public class frmBorrarCliente extends javax.swing.JFrame {
         jScrollPane2.setBackground(new java.awt.Color(255, 255, 255));
         jScrollPane2.setForeground(new java.awt.Color(0, 0, 0));
 
-        jList1.setBackground(new java.awt.Color(255, 255, 255));
-        jScrollPane2.setViewportView(jList1);
+        jLista1.setBackground(new java.awt.Color(255, 255, 255));
+        jScrollPane2.setViewportView(jLista1);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -254,7 +254,7 @@ public class frmBorrarCliente extends javax.swing.JFrame {
     private javax.swing.JButton jBotonSalir;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JList<String> jList1;
+    private javax.swing.JList<String> jLista1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
