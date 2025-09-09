@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="model">
+  <ClassDiagramComponents>
+    <Class name="Cliente" package="model" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields>
+        <Field name="dni" type="int" visibility="private"/>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="apellido" type="String" visibility="private"/>
+        <Field name="ciudad" type="String" visibility="private"/>
+        <Field name="direccion" type="String" visibility="private"/>
+        <Field name="telefono" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="int" name="dni"/>
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="apellido"/>
+          <Argument type="String" name="ciudad"/>
+          <Argument type="String" name="direccion"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getDni" returnType="int" visibility="public"/>
+        <Method name="setDni" returnType="void" visibility="public">
+          <Argument type="int" name="dni"/>
+        </Method>
+        <Method name="getNombre" returnType="String" visibility="public"/>
+        <Method name="setNombre" returnType="void" visibility="public">
+          <Argument type="String" name="nombre"/>
+        </Method>
+        <Method name="getTelefono" returnType="String" visibility="public"/>
+        <Method name="getApellido" returnType="String" visibility="public"/>
+        <Method name="setApellido" returnType="void" visibility="public">
+          <Argument type="String" name="apellido"/>
+        </Method>
+        <Method name="getCiudad" returnType="String" visibility="public"/>
+        <Method name="setCiudad" returnType="void" visibility="public">
+          <Argument type="String" name="ciudad"/>
+        </Method>
+        <Method name="getDireccion" returnType="String" visibility="public"/>
+        <Method name="setDireccion" returnType="void" visibility="public">
+          <Argument type="String" name="direccion"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Directorio" package="model" visibility="public" xPosition="644.0" yPosition="91.0">
+      <Fields>
+        <Field name="contactos" type="TreeMap&lt;Long, Cliente&gt;" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="TreeMap&lt;Long, Cliente&gt;" name="contactos"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="agregarContacto" returnType="boolean" visibility="public">
+          <Argument type="Long" name="telefono"/>
+          <Argument type="Cliente" name="cliente"/>
+        </Method>
+        <Method name="buscarContactoConTelefono" returnType="Cliente" visibility="public">
+          <Argument type="Long" name="telefono"/>
+        </Method>
+        <Method name="buscarTelefonoPorApellido" returnType="Set&lt;Long&gt;" visibility="public">
+          <Argument type="String" name="apellido"/>
+        </Method>
+        <Method name="buscarContactosPorCiudad" returnType="ArrayList&lt;Cliente&gt;" visibility="public">
+          <Argument type="String" name="ciudad"/>
+        </Method>
+        <Method name="borrarContactoPorTelefono" returnType="boolean" visibility="public">
+          <Argument type="Long" name="telefono"/>
+        </Method>
+        <Method name="buscarClientePorDni" returnType="Cliente" visibility="public">
+          <Argument type="long" name="dni"/>
+        </Method>
+        <Method name="borrarCliente" returnType="boolean" visibility="public">
+          <Argument type="Cliente" name="c"/>
+        </Method>
+        <Method name="getClientes" returnType="Collection&lt;Cliente&gt;" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <UseRelation source="model.Directorio" target="model.Cliente" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="contactos" source="model.Directorio" target="model.Cliente" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="TreeMap&lt;Long, Cliente&gt;"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
