@@ -9,6 +9,7 @@ import model.Cliente;
 import javax.swing.table.DefaultTableModel;
 import java.util.Set;
 import javax.swing.JOptionPane;
+import javax.swing.DefaultListModel;
 
 /**
  *
@@ -29,6 +30,21 @@ public class frmBuscarTelefonoPorApellido extends javax.swing.JFrame {
          setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         configurarTabla();
+        
+        jTextField1.getDocument().addDocumentListener(new javax.swing.event.DocumentListener() {
+        @Override
+        public void insertUpdate(javax.swing.event.DocumentEvent e) {
+            buscarPorApellido();
+        }
+        @Override
+        public void removeUpdate(javax.swing.event.DocumentEvent e) {
+           buscarPorApellido();
+        }
+        @Override
+        public void changedUpdate(javax.swing.event.DocumentEvent e) {
+           buscarPorApellido();
+        }
+    });
     }
     
     private void configurarTabla() {
@@ -51,7 +67,7 @@ public class frmBuscarTelefonoPorApellido extends javax.swing.JFrame {
     private void buscarPorApellido() {
         String apellido = jTextField1.getText().trim();
 
-        if (apellido.equals("")) {
+        if (apellido.isEmpty()) {
             JOptionPane.showMessageDialog(
                 this, "Ingresá un apellido para buscar",
                 "Aviso", JOptionPane.WARNING_MESSAGE
@@ -65,13 +81,9 @@ public class frmBuscarTelefonoPorApellido extends javax.swing.JFrame {
         Set<Long> telefonos = frmMenuPrincipal.directorio.buscarTelefonoPorApellido(apellido);
 
         if (telefonos == null || telefonos.isEmpty()) {
-            JOptionPane.showMessageDialog(
-                this, "No se encontraron teléfonos para el apellido: " + apellido,
-                "Sin resultados", JOptionPane.INFORMATION_MESSAGE
-            );
             return;
         }
-
+       DefaultListModel<String> modeloLista = new DefaultListModel<>();
         for (Long tel : telefonos) {
             Cliente c = frmMenuPrincipal.directorio.buscarContactoConTelefono(tel);
             if (c != null) {
@@ -84,8 +96,10 @@ public class frmBuscarTelefonoPorApellido extends javax.swing.JFrame {
                     tel
                 };
                 modeloTabla.addRow(fila);
+                modeloLista.addElement(c.getApellido());
             }
         }
+         jLista1.setModel(modeloLista);
     }
 
     /**

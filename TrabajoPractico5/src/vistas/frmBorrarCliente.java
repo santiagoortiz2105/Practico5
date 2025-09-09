@@ -37,22 +37,10 @@ public class frmBorrarCliente extends javax.swing.JFrame {
         jLista1.addListSelectionListener(new ListSelectionListener() {
             public void valueChanged(ListSelectionEvent e) {
                 if (!e.getValueIsAdjusting()) {
-                    String telefono = jLista1.getSelectedValue();
-                    if (telefono != null) {
-                        long tel = Long.parseLong(telefono);
-                        Cliente c = directorio.buscarContactoConTelefono(tel);
-                        if (c != null) {
-                            DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
-                            model.setRowCount(0);
-                            model.addRow(new Object[]{
-                                c.getDni(),
-                                c.getApellido(),
-                                c.getNombre(),
-                                c.getDireccion(),
-                                c.getCiudad(),
-                                c.getTelefono()
-                            });
-                        }
+                    String seleccionado = jLista1.getSelectedValue();
+                    if (seleccionado != null) {
+                        long dni = Long.parseLong(seleccionado);
+                        mostrarCliente(dni);
                     }
                 }
             }
@@ -75,9 +63,9 @@ public class frmBorrarCliente extends javax.swing.JFrame {
                
                                     
             });
-         // llenar la lista con el teléfono del cliente
+         // llenar la lista con el dni del cliente
         DefaultListModel<String> modeloLista = new DefaultListModel<>();
-        modeloLista.addElement(String.valueOf(c.getTelefono()));
+        modeloLista.addElement(String.valueOf(c.getDni()));
         jLista1.setModel(modeloLista);       
         } else {
             JOptionPane.showMessageDialog(this, "No se encontró un cliente con ese DNI");
