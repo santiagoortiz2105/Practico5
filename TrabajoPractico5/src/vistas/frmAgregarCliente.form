@@ -101,22 +101,15 @@
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="comboCiudades" alignment="0" pref="147" max="32767" attributes="0"/>
-                                  <Component id="txtDni" max="32767" attributes="0"/>
-                                  <Component id="txtNombre" alignment="0" max="32767" attributes="0"/>
-                              </Group>
-                              <Component id="txtApellido" alignment="0" min="-2" pref="147" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="comboCiudades" alignment="0" pref="147" max="32767" attributes="0"/>
+                          <Component id="txtDni" max="32767" attributes="0"/>
+                          <Component id="txtNombre" alignment="0" max="32767" attributes="0"/>
                       </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <Component id="txtDireccion" min="-2" pref="147" max="-2" attributes="0"/>
-                          <EmptySpace min="29" pref="235" max="32767" attributes="0"/>
-                      </Group>
+                      <Component id="txtApellido" alignment="0" min="-2" pref="147" max="-2" attributes="0"/>
+                      <Component id="txtDireccion" alignment="0" min="-2" pref="147" max="-2" attributes="0"/>
                   </Group>
+                  <EmptySpace pref="235" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>

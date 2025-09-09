@@ -259,7 +259,7 @@ public class frmAgregarCliente extends javax.swing.JFrame {
 
     private void jBotonGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBotonGuardarActionPerformed
      String sDni = txtDni.getText().trim();
-    String nombre = txtApellido.getText().trim();
+    String nombre = txtNombre.getText().trim();
     String apellido = txtApellido.getText().trim();
     String ciudad = "";
     if (comboCiudades.getSelectedItem() != null) {
@@ -307,7 +307,7 @@ public class frmAgregarCliente extends javax.swing.JFrame {
     }//GEN-LAST:event_comboCiudadesActionPerformed
     private void limpiarCampos() {
         txtDni.setText("");
-        txtApellido.setText("");
+        txtNombre.setText("");
         txtApellido.setText("");
         txtDireccion.setText("");
         txtTelefono.setText("");
